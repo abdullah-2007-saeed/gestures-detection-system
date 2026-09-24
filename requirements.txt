@@ -1,5 +1,6 @@
+--no-binary opencv-python,opencv-contrib-python
 streamlit
-opencv-python-headless
+opencv-python-headless==4.10.0.84
 numpy==1.26.4
 mediapipe==0.10.14
 scikit-learn
