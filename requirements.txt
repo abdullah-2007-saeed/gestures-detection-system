@@ -7,3 +7,4 @@ joblib
 pandas
 av
 streamlit-webrtc
+cv2
