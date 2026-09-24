@@ -5,5 +5,4 @@ numpy<2.0.0
 scikit-learn
 joblib
 pandas
-av==12.3.0
-streamlit-webrtc==0.47.9
+streamlit-webrtc
