@@ -5,3 +5,5 @@ data/palm.json
 data/ok.json
 data/like.json
 .venv
+
+!hand_landmarker.task

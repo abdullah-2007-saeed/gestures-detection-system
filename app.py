@@ -17,8 +17,9 @@ from mediapipe.tasks.python import vision
 # Load model
 # ============================================================
 
-model = joblib.load("gesture detection model.pkl")
-encoder = joblib.load("gesture detection encoder.pkl")
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+model = joblib.load(os.path.join(BASE_DIR, "gesture detection model.pkl"))
+encoder = joblib.load(os.path.join(BASE_DIR, "gesture detection encoder.pkl"))
 
 
 # ============================================================
@@ -29,7 +30,6 @@ class GestureProcessor(VideoProcessorBase):
 
     def __init__(self):
         # Fix file path issues by building an absolute path to the model
-        BASE_DIR = os.path.dirname(os.path.abspath(__file__))
         model_path = os.path.join(BASE_DIR, "hand_landmarker.task")
         
         if not os.path.isfile(model_path) or os.path.getsize(model_path) == 0:
@@ -175,6 +175,9 @@ st.write(
 webrtc_streamer(
     key="gesture-recognition",
     video_processor_factory=GestureProcessor,
+    rtc_configuration={
+        "iceServers": [{"urls": ["stun:stun.l.google.com:19302"]}]
+    },
     media_stream_constraints={
         "video": True,
         "audio": False
