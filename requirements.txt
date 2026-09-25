@@ -1,6 +1,9 @@
 streamlit
-numpy==1.26.4
+opencv-python
+mediapipe
+numpy
 scikit-learn
 joblib
 pandas
-pillow
+av
+streamlit-webrtc
